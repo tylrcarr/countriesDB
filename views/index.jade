@@ -1,0 +1,66 @@
+extends layout
+
+block content
+    h1 Magical stuff
+    p Welcome to our test
+
+
+
+
+
+    // Wrapper
+    #wrapper
+        // Country Info 
+        #country1Info
+            h2 Country 1 Info
+            p
+                strong Name:
+                |  <span id='country1InfoName'></span>
+                br
+                strong Country Code:
+                |  <span id='country1InfoISO'></span>
+                br
+                strong Calling Code:
+                |  <span id='country1InfoCall'></span>
+                br
+                strong Literacy Rate:
+                |  <span id='country1InfoLit'></span>
+        // / Country Info
+        // / Country 2
+        #country2Info
+            h2 Country 2 Info
+            p
+                strong Name:
+                |  <span id='country2InfoName'></span>
+                br 
+                strong Country Code:
+                |  <span id='country2InfoISO'></span>
+                br 
+                strong Calling Code:
+                |  <span id='country2InfoCall'></span>
+                br
+                strong Literacy Rate:
+                |  <span id='country2InfoLit'></span>
+        // COUNTRY LIST
+        h2 Countries
+        #countryList
+            table
+                thead
+                  th countries
+                  th code
+                tbody
+        // /COUNTRY LIST
+
+        // Add Country
+        h2 Add Country
+        #addCountry
+            fieldset
+                input#inputCountryName(type='text', placeholder='Country Name')
+                input#inputCountryISO(type='text', placeholder='Country Code')
+                br
+                input#inputCountryCall(type='text', placeholder='Calling Code')
+                input#inputCountryLit(type='text', placeholder='Literacy Rate')
+                br
+                button#btnAddCountry Add Country
+        // /Add Country
+

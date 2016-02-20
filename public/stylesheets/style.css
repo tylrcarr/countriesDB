@@ -1,17 +1,18 @@
 body {
   padding: 30px;
-  font: 14px "Comic Sans MS", Helvetica, Arial, sans-serif;
+  font: 14px "Courier New", Helvetica, Arial, sans-serif;
 }
 
 h2 {
   margin:0 0 .5em 0;
 }
 
-a {
-  color: #ffff66;
-  background:chartreuse
+a:link {
+  color: #0000ff;
+} 
+a:hover {
+  color: #ff00ff;
 }
-
 #wrapper {
   padding-left:312px;
   position:relative;

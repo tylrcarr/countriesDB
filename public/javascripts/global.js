@@ -24,7 +24,7 @@ function populateTable() {
         $.each(data, function(){
             countryListData = data;
             tableContent += '<tr>';
-            tableContent += '<td><a class="">' + this.country + '</a></td>';
+            tableContent += '<td><p class="">' + this.country + '</p></td>';
             tableContent += '<td>' + this.ISO + '</td>';
             tableContent += '<td><a href="#" class="linkchoosecountry1" rel="' + this.country + '">Choose for Country 1</a></td>';
             tableContent += '<td><a href="#" class="linkchoosecountry2" rel="' + this.country + '">Choose for Country 2</a></td>';
@@ -40,33 +40,37 @@ function populateTable() {
 $('#countryList table tbody').on('click', 'td a.linkchoosecountry1', showCountry1Info);
 $('#countryList table tbody').on('click', 'td a.linkchoosecountry2', showCountry2Info);
 
+var thisCountry1Object;
+var thisCountry2Object;
 function showCountry1Info(event) {
     // Put list into data 
-    var country1ListData = countryListData
+    country1ListData = countryListData;
     // Prevent Link from Firing
     event.preventDefault();
     // Retrieve username from link rel attribute
     var thisCountry1Name = $(this).attr('rel');
     // Get Index of object based on id value
     var array1Position = country1ListData.map(function(arrayItem) { return arrayItem.country; }).indexOf(thisCountry1Name);
-    var thisCountry1Object = country1ListData[array1Position];
+    thisCountry1Object = country1ListData[array1Position];
     //Populate Info Box
     $('#country1InfoName').text(thisCountry1Object.country);
     $('#country1InfoCall').text(thisCountry1Object.callCode);
     $('#country1InfoISO').text(thisCountry1Object.ISO);
     $('#country1InfoLit').text(thisCountry1Object.litRate);
+  
+
 };
 function showCountry2Info(event) {
 
     // Put list into data
-    var country2ListData = countryListData
+    country2ListData = countryListData;
     // Prevent Link from Firing
     event.preventDefault();
     // Retrieve username from link rel attribute
     var thisCountry2Name = $(this).attr('rel');
     // Get Index of object based on id value
     var array2Position = country2ListData.map(function(arrayItem) { return arrayItem.country; }).indexOf(thisCountry2Name);
-    var thisCountry2Object = country2ListData[array2Position];
+    thisCountry2Object = country2ListData[array2Position];
     //Populate Info Box
     $('#country2InfoName').text(thisCountry2Object.country);
     $('#country2InfoCall').text(thisCountry2Object.callCode);
@@ -74,7 +78,25 @@ function showCountry2Info(event) {
     $('#country2InfoLit').text(thisCountry2Object.litRate);
 };
 
+function compare(){
+  if(country1ListData.length < 1) {
+    alert("Please choose country 1");
+  } else if(country2ListData.length < 1) {
+    alert("Please choose country 2");
+  } else if(thisCountry2Object.litRate == thisCountry1Object.litRate){
+    alert("Choose 2 different countries");
+  } else {
+    if(thisCountry2Object.litRate > thisCountry1Object.litRate){
+      var country2LitText = document.querySelector("#country2InfoLit");
+      country2LitText.textContent += "+"
+    } else {
+      var country1LitText = document.querySelector("#country1InfoLit");
+      country1LitText.textContent += "+"
+    }
+  }
+}
 
+$('#btnCompare').on('click', compare);
 function addCountry(event) {
     event.preventDefault();
 

@@ -45,7 +45,7 @@ a:hover {
 
 #country1Info {
   width:250px;
-  position:absolute;
+  position:fixed;
   top:0; left:0;
 }
   #country1Info p {
@@ -56,13 +56,19 @@ a:hover {
 
 #country2Info {
   width:250px;
-  top:0; left:0;
+  position:fixed;
+  top:0; right:0;
 }
   #country2Info p {
     padding:15px;
     border:1px solid #CCC;
     background:rgba(80,120,255,0.05);
   }
+#titlediv h1{
+  position:fixed;
+  top:0; right:50%;
+}
+
 fieldset {
   border:0;
   padding:0; margin:0;

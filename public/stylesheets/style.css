@@ -20,6 +20,8 @@ a:hover {
 
 #countryList {
   margin:0 0 30px 0;
+  top:50%; left:50%;
+  position:fixed;
 }
   #countryList table {
     border-collapse:separate;
@@ -64,7 +66,7 @@ a:hover {
     border:1px solid #CCC;
     background:rgba(80,120,255,0.05);
   }
-#titlediv h1{
+#titleDiv h1{
   position:fixed;
   top:0; right:50%;
 }

@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/nodetest2');
-
+var admin = require('./routes/admin');
 var routes = require('./routes/index');
 var countries = require('./routes/countries');
 
@@ -33,7 +33,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/countries', countries);
-
+app.use('/admin',admin);
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

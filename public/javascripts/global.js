@@ -57,6 +57,11 @@ function showCountry1Info(event) {
     $('#country1InfoCall').text(thisCountry1Object.callCode);
     $('#country1InfoISO').text(thisCountry1Object.ISO);
     $('#country1InfoLit').text(thisCountry1Object.litRate);
+    $('#country1InfoPop').text(thisCountry1Object.pop);
+    $('#country1InfoArea').text(thisCountry1Object.area);
+    $('#country1InfoCapital').text(thisCountry1Object.capital);
+    $('#country1InfoCurrency').text(thisCountry1Object.currency);
+
   
 
 };
@@ -76,6 +81,10 @@ function showCountry2Info(event) {
     $('#country2InfoCall').text(thisCountry2Object.callCode);
     $('#country2InfoISO').text(thisCountry2Object.ISO);
     $('#country2InfoLit').text(thisCountry2Object.litRate);
+    $('#country2InfoPop').text(thisCountry2Object.pop);
+    $('#country2InfoArea').text(thisCountry2Object.area);
+    $('#country2InfoCapital').text(thisCountry2Object.capital);
+    $('#country2InfoCurrency').text(thisCountry2Object.currency);
 };
 
 function compare(){
@@ -115,6 +124,10 @@ function addCountry(event) {
             'callCode': $('#addCountry fieldset input#inputCountryCall').val(),
             'ISO': $('#addCountry fieldset input#inputCountryISO').val(),
             'litRate': $('#addCountry fieldset input#inputCountryLit').val(),
+            'pop': $('#addCountry fieldset input#inputCountryPop').val(),
+            'area': $('#addCountry fieldset input#inputCountryArea').val(),
+            'capital': $('#addCountry fieldset input#inputCountryCapital').val(),
+            'currency': $('#addCountry fieldset input#inputCountryCurrency').val(),
         }
 
         // Use AJAX to post the object to our adduser service

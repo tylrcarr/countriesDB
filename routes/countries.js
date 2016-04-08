@@ -7,7 +7,7 @@ var router = express.Router();
 router.get('/countryList', function(req, res) {
     var db = req.db;
     var collection = db.get('countries');
-    collection.find({},{},function(e,docs){
+    collection.find({},{sort:{country: 1}},function(e,docs){
         res.json(docs);
     });
 });

@@ -101,6 +101,20 @@ function compare(){
     } else {
       var country1LitText = document.querySelector("#country1InfoLit");
       country1LitText.textContent += "+"
+    } 
+    if(thisCountry2Object.pop > thisCountry1Object.pop){
+      var country2PopText = document.querySelector("#country2InfoPop");
+      country2PopText.textContent += "+"
+    } else {
+      var country1PopText = document.querySelector("#country1InfoPop");
+      country1PopText.textContent += "+"
+    }
+    if(thisCountry2Object.litRate > thisCountry1Object.area){
+      var country2AreaText = document.querySelector("#country2InfoArea");
+      country2AreaText.textContent += "+"
+    } else {
+      var country1AreaText = document.querySelector("#country1InfoArea");
+      country1AreaText.textContent += "+"
     }
   }
 }

@@ -53,15 +53,7 @@ function showCountry1Info(event) {
     var array1Position = country1ListData.map(function(arrayItem) { return arrayItem.country; }).indexOf(thisCountry1Name);
     thisCountry1Object = country1ListData[array1Position];
     //Populate Info Box
-    $('#country1InfoName').text(thisCountry1Object.country);
-    $('#country1InfoCall').text(thisCountry1Object.callCode);
-    $('#country1InfoISO').text(thisCountry1Object.ISO);
-    $('#country1InfoLit').text(thisCountry1Object.litRate);
-    $('#country1InfoPop').text(thisCountry1Object.pop);
-    $('#country1InfoArea').text(thisCountry1Object.area);
-    $('#country1InfoCapital').text(thisCountry1Object.capital);
-    $('#country1InfoCurrency').text(thisCountry1Object.currency);
-
+    populateCountry1Info()
   
 
 };
@@ -77,6 +69,9 @@ function showCountry2Info(event) {
     var array2Position = country2ListData.map(function(arrayItem) { return arrayItem.country; }).indexOf(thisCountry2Name);
     thisCountry2Object = country2ListData[array2Position];
     //Populate Info Box
+    populateCountry2Info()
+};
+function populateCountry2Info(){
     $('#country2InfoName').text(thisCountry2Object.country);
     $('#country2InfoCall').text(thisCountry2Object.callCode);
     $('#country2InfoISO').text(thisCountry2Object.ISO);
@@ -85,13 +80,17 @@ function showCountry2Info(event) {
     $('#country2InfoArea').text(thisCountry2Object.area);
     $('#country2InfoCapital').text(thisCountry2Object.capital);
     $('#country2InfoCurrency').text(thisCountry2Object.currency);
-};
-function populateCountry2Info(){
-
 
 }
 function populateCountry1Info(){
-
+    $('#country1InfoName').text(thisCountry1Object.country);
+    $('#country1InfoCall').text(thisCountry1Object.callCode);
+    $('#country1InfoISO').text(thisCountry1Object.ISO);
+    $('#country1InfoLit').text(thisCountry1Object.litRate);
+    $('#country1InfoPop').text(thisCountry1Object.pop);
+    $('#country1InfoArea').text(thisCountry1Object.area);
+    $('#country1InfoCapital').text(thisCountry1Object.capital);
+    $('#country1InfoCurrency').text(thisCountry1Object.currency);
 }
 function compare(){
   populateCountry1Info()

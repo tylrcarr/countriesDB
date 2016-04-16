@@ -99,6 +99,7 @@ function compare(){
     var country2LitText = document.querySelector("#country2InfoLit").textContent;
     // finish up the + selector
     var country1LitText = document.querySelector("#country1InfoLit").textContent;
+    var country1LitQuery = document.querySelector("#country1InfoLit");
     var litRate2 = thisCountry2Object.litRate;
     litRate2 = litRate2.substring(0,litRate2.length - 1);
     var litRate1 = thisCountry1Object.litRate;
@@ -108,15 +109,11 @@ function compare(){
         
         litRate2 = parseInt(litRate2);
         litRate1 = parseInt(litRate1);
-        console.log(litRate2);
-        console.log(litRate1);
         
         if(litRate2 > litRate1){
           country2LitQuery.textContent += "+"
-          console.log("yay");
         } else {
           country1LitQuery.textContent += "+"
-          console.log("yay");
         }
       } else {
       

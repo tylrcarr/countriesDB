@@ -93,8 +93,8 @@ function populateCountry1Info(){
     $('#country1InfoCurrency').text(thisCountry1Object.currency);
 }
 function compare(){
-  populateCountry1Info()
-  populateCountry2Info()
+  populateCountry1Info();
+  populateCountry2Info();
   if(country1ListData.length < 1) {
     alert("Please choose country 1");
   } else if(country2ListData.length < 1) {
@@ -104,17 +104,18 @@ function compare(){
   } else {
     
     
-    var country2LitText = document.querySelector("#country2InfoLit").textContent;
+    var country2LitQuery = document.querySelector("#country2InfoLit");
+    var country2LitText = country2LitQuery.textContent 
     // finish up the + selector
-    var country1LitText = document.querySelector("#country1InfoLit").textContent;
     var country1LitQuery = document.querySelector("#country1InfoLit");
+    var country1LitText = country1LitQuery.textContent 
     var litRate2 = thisCountry2Object.litRate;
-    litRate2 = litRate2.substring(0,litRate2.length - 1);
     var litRate1 = thisCountry1Object.litRate;
-    litRate1 = litRate1.substring(0, litRate1.length - 1);
     if(country1LitText.substring(country1LitText.length - 1) !== "+" && country2LitText.substring(country2LitText.length - 1) !== "+"){
       if(litRate2 !== "N/A" && litRate1 !== "N/A"){
         
+        litRate1 = litRate1.substring(0, litRate1.length - 1);
+        litRate2 = litRate2.substring(0,litRate2.length - 1);
         litRate2 = parseInt(litRate2);
         litRate1 = parseInt(litRate1);
         
@@ -124,7 +125,6 @@ function compare(){
           country1LitQuery.textContent += "+"
         }
       } else {
-      
       }
     }
     var pop2 = parseInt(thisCountry2Object.pop);

@@ -86,7 +86,16 @@ function showCountry2Info(event) {
     $('#country2InfoCapital').text(thisCountry2Object.capital);
     $('#country2InfoCurrency').text(thisCountry2Object.currency);
 };
+function populateCountry2Info(){
+
+
+}
+function populateCountry1Info(){
+
+}
 function compare(){
+  populateCountry1Info()
+  populateCountry2Info()
   if(country1ListData.length < 1) {
     alert("Please choose country 1");
   } else if(country2ListData.length < 1) {
@@ -128,25 +137,25 @@ function compare(){
     if(country1LitText.substring(country1LitText.length - 1) !== "+" && country2LitText.substring(country2LitText.length - 1) !== "+"){
         if(pop2 > pop1){
             
-            country2PopText.textContent += "+"
+            country2PopQuery.textContent += "+"
         } else {
             
-            country1PopText.textContent += "+"
+            country1PopQuery.textContent += "+"
         }
     }
     
     var area2 = parseInt(thisCountry2Object.area);
     var country2AreaQuery = document.querySelector("#country2InfoArea");
     var country2AreaText = country2AreaQuery.textContent;
-    var country1AreaText = document.querySelector("#country1InfoArea");
+    var country1AreaQuery = document.querySelector("#country1InfoArea");
     var country1AreaText = country1AreaQuery.textContent;
     var area1 = parseInt(thisCountry1Object.area);
     if(country1AreaText.substring(country1AreaText.length - 1) !== "+" && country2AreaText.substring(country2AreaText.length - 1) !== "+"){
         if(area2 > area1){
             
-            country2AreaText.textContent += "+"
+            country2AreaQuery.textContent += "+"
         } else {
-            country1AreaText.textContent += "+"
+            country1AreaQuery.textContent += "+"
         }
     }
   }

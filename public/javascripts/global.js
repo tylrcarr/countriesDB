@@ -104,7 +104,7 @@ function compare(){
     alert("Choose 2 different countries");
   } else {
     
-    var country2LitQuery = document.querySelector("#country2InfoLit");
+    
     var country2LitText = document.querySelector("#country2InfoLit").textContent;
     // finish up the + selector
     var country1LitText = document.querySelector("#country1InfoLit").textContent;

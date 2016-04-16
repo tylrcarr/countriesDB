@@ -120,22 +120,34 @@ function compare(){
       }
     }
     var pop2 = parseInt(thisCountry2Object.pop);
+    var country2PopQuery = document.querySelector("#country2InfoPop");
+    var country2PopText = country2PopQuery.textContent;
     var pop1 = parseInt(thisCountry1Object.pop);
-    if(pop2 > pop1){
-      var country2PopText = document.querySelector("#country2InfoPop");
-      country2PopText.textContent += "+"
-    } else {
-      var country1PopText = document.querySelector("#country1InfoPop");
-      country1PopText.textContent += "+"
+    var country1PopQuery = document.querySelector("#country1InfoPop");
+    var country1PopText = country1PopQuery.textContent;
+    if(country1LitText.substring(country1LitText.length - 1) !== "+" && country2LitText.substring(country2LitText.length - 1) !== "+"){
+        if(pop2 > pop1){
+            
+            country2PopText.textContent += "+"
+        } else {
+            
+            country1PopText.textContent += "+"
+        }
     }
+    
     var area2 = parseInt(thisCountry2Object.area);
+    var country2AreaQuery = document.querySelector("#country2InfoArea");
+    var country2AreaText = country2AreaQuery.textContent;
+    var country1AreaText = document.querySelector("#country1InfoArea");
+    var country1AreaText = country1AreaQuery.textContent;
     var area1 = parseInt(thisCountry1Object.area);
-    if(area2 > area1){
-      var country2AreaText = document.querySelector("#country2InfoArea");
-      country2AreaText.textContent += "+"
-    } else {
-      var country1AreaText = document.querySelector("#country1InfoArea");
-      country1AreaText.textContent += "+"
+    if(country1AreaText.substring(country1AreaText.length - 1) !== "+" && country2AreaText.substring(country2AreaText.length - 1) !== "+"){
+        if(area2 > area1){
+            
+            country2AreaText.textContent += "+"
+        } else {
+            country1AreaText.textContent += "+"
+        }
     }
   }
 }

@@ -103,10 +103,9 @@ function compare(){
     alert("Choose 2 different countries");
   } else {
     
-    
+    // change plus to color change
     var country2LitQuery = document.querySelector("#country2InfoLit");
     var country2LitText = country2LitQuery.textContent 
-    // finish up the + selector
     var country1LitQuery = document.querySelector("#country1InfoLit");
     var country1LitText = country1LitQuery.textContent 
     var litRate2 = thisCountry2Object.litRate;

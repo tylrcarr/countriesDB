@@ -9,7 +9,7 @@
     padding: 2px;
     resize: both;
     width: 200px;
-
+    margin: auto;
 }
 a:link {
   color: #0000ff;

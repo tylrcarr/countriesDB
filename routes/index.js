@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Troy is my one true love' });
+  res.render('index', { title: 'Countries Comparer' });
 });
 
 module.exports = router;

@@ -21,7 +21,7 @@ function populateTable() {
     $.getJSON( '/countries/countryList', function( data ) {
 
         // For each item in our JSON, add a table row and cells to the content string
-        $.each(data, function(){
+        $.each(filter(data, document.getElementById("searchBar").textContent), function(){
             countryListData = data;
             tableContent += '<tr>';
             tableContent += '<td><p class="">' + this.country + '</p></td>';
@@ -36,10 +36,10 @@ function populateTable() {
         $('#countryList table tbody').html(tableContent);
     });
 };
+window.addEventListener("keydown", populateTable, false);
 // on click events
 $('#countryList table tbody').on('click', 'td a.linkchoosecountry1', showCountry1Info);
 $('#countryList table tbody').on('click', 'td a.linkchoosecountry2', showCountry2Info);
-
 var thisCountry1Object;
 var thisCountry2Object;
 function showCountry1Info(event) {
@@ -91,6 +91,19 @@ function populateCountry1Info(){
     $('#country1InfoArea').text(thisCountry1Object.area);
     $('#country1InfoCapital').text(thisCountry1Object.capital);
     $('#country1InfoCurrency').text(thisCountry1Object.currency);
+}
+function filter(json, qry){
+  var filteredList = [];
+  for(var i=0; i<Object.keys(json).length; i++){
+    var current = json[i].country;
+    current = current.toLowerCase();
+    qry = qry.toLowerCase();
+    if(current.indexOf(qry) !== -1){
+      filteredList.push(json[i]); 
+    }
+    
+  }
+  return filteredList;
 }
 function compare(){
   populateCountry1Info();
